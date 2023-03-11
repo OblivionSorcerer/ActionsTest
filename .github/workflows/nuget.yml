@@ -7,7 +7,7 @@ jobs:
       - name: Get repo code
         uses: actions/checkout@v3
       - name: nugetPack
-        run: dotnet pack PowerCollections --configuration Release
+        run: dotnet pack PowerCollections --configuration Release --no-restore
       - name: nugetPublish
-        run: nuget push *.nupkg --source "https://nuget.pkg.github.com/OblivionSorcerer/index.json" ${{ secrets.GITHUB_TOKEN }}
+        run: nuget push *.nupkg -s "https://nuget.pkg.github.com/OblivionSorcerer/index.json" -k ${{ secrets.GITHUB_TOKEN }}
         
