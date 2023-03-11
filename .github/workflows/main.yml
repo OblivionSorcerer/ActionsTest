@@ -1,5 +1,5 @@
 name: TestTestov
-on: workflow_dispatch
+on: push
 jobs:
   GoTest:
     runs-on: windows-latest
