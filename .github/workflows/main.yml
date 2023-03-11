@@ -7,4 +7,4 @@ jobs:
       - name: Get repo code
         uses: actions/checkout@v3
       - name: Test
-        run: dotnet test
+        run: dotnet test PowerCollections.Tests/PowerCollections.Tests.csproj
