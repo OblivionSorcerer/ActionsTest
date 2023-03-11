@@ -18,7 +18,7 @@ namespace Wintellect.PowerCollections
             capacity = capacityOfStack;
             stack = new T[capacity];
         }
-        public Stac()
+        public Stack()
         {
             capacity = 100;
             stack = new T[capacity];
