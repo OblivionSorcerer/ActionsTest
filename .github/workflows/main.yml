@@ -1,0 +1,13 @@
+name: TestTestov
+on: workflow_dispatch
+jobs:
+  GoTest:
+    runs-on: windows-latest
+    steps:
+      - name: Get repo code
+        uses: actions/checkout@v3
+      - name: build
+        uses: actions/setup-dotnet@v3
+      - run: dotnet build
+      - name: Test
+        run: dotnet test
