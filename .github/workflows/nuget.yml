@@ -1,0 +1,13 @@
+name: TestNuget
+on: workflow_dispatch
+jobs:
+  GoTest:
+    runs-on: windows-latest
+    steps:
+      - name: Get repo code
+        uses: actions/checkout@v3
+      - name: nugetPack
+        run: dotnet pack --configuration Release
+      - name: nugetPublish
+        run: nuget push *.nupkg --source "https://nuget.pkg.github.com/OblivionSorcerer/index.json" ${{ secrets.GITHUB_TOKEN }}
+        
